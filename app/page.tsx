@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="p-10">
       <h1 className="text-2xl font-bold">
-        Supabase Connected ✅
+        Supabase Connected
       </h1>
       <p>打开浏览器 Console 看结果</p>
     </div>
