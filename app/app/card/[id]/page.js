@@ -50,23 +50,17 @@ export default function MemberCard() {
     : 'linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 40%, #1a1a1a 100%)';
 
   var tiers = {
-    'Black Gold': { topup: 6000, points: 6588, foodDisc: 10, alcDisc: 10, parking: true },
-    'Platinum': { topup: 2000, points: 2288, foodDisc: 5, alcDisc: 5, parking: false },
+    'Black Gold': { foodDisc: 10, alcDisc: 10, parking: true },
+    'Platinum': { foodDisc: 5, alcDisc: 5, parking: false },
   };
   var tierInfo = tiers[member.tier] || tiers['Platinum'];
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
-
-        {/* Card */}
         <div className="rounded-3xl overflow-hidden border shadow-2xl" style={{ background: bgGrad, borderColor: tc + '25' }}>
-
-          {/* Top decorative line */}
           <div className="h-1" style={{ background: 'linear-gradient(90deg, transparent, ' + tc + ', transparent)' }}></div>
-
           <div className="p-6">
-            {/* Header */}
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, ' + tc + ', ' + tc + '88)' }}>
@@ -81,15 +75,11 @@ export default function MemberCard() {
                 <span className="text-xs font-bold" style={{ color: tc }}>★ {member.tier}</span>
               </div>
             </div>
-
-            {/* Member Name */}
             <div className="mb-6">
               <p className="text-gray-700" style={{ fontSize: '9px', letterSpacing: '0.2em' }}>MEMBER</p>
               <h2 className="text-2xl font-black text-white tracking-wide mt-0.5">{member.name}</h2>
               <p className="text-xs text-gray-600 mt-1 font-mono">{member.id}</p>
             </div>
-
-            {/* Balance & Points */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="rounded-2xl p-4 text-center" style={{ background: tc + '08', border: '1px solid ' + tc + '15' }}>
                 <p className="text-gray-600" style={{ fontSize: '8px', letterSpacing: '0.2em' }}>BALANCE</p>
@@ -100,8 +90,6 @@ export default function MemberCard() {
                 <p className="text-xl font-black mt-1" style={{ color: tc }}>{member.points}</p>
               </div>
             </div>
-
-            {/* Benefits */}
             <div className="rounded-2xl p-4" style={{ background: tc + '06', border: '1px solid ' + tc + '10' }}>
               <p className="text-gray-600 mb-3" style={{ fontSize: '8px', letterSpacing: '0.2em' }}>BENEFITS</p>
               <div className="space-y-2">
@@ -120,17 +108,12 @@ export default function MemberCard() {
               </div>
             </div>
           </div>
-
-          {/* Bottom decorative line */}
           <div className="h-1 mt-2" style={{ background: 'linear-gradient(90deg, transparent, ' + tc + '44, transparent)' }}></div>
         </div>
-
-        {/* Footer */}
         <div className="text-center mt-6">
           <p className="text-gray-700" style={{ fontSize: '10px' }}>Present this card when visiting</p>
           <p className="text-xs font-bold mt-1" style={{ color: tc }}>LU BAR</p>
         </div>
-
       </div>
     </div>
   );
